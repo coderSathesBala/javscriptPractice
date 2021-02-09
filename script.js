@@ -1,19 +1,28 @@
-function talk() {
-    console.log(this.sound)
+class User {
+    constructor(email, name){
+        this.email = email;
+        this.name= name;
+        this.score = 0;
+    }
+    
+    login(){
+        console.log(this.email, 'just logged in')
+        return this;
+    }
+    logout(){
+        console.log(this.email, 'just logged out');
+    }
+    updateScore(){
+        this.score++;
+        console.log(this.email, 'score is now', this.score);
+    }
 }
 
-let boromir = {sound: 'one does have apples'}
-
-let talkBoundToBoromir = talk.bind(boromir)
-talkBoundToBoromir()
-
-let talkz = function() {
-    console.log(this.sound)
+class Admin extends User {
+    deleteUser() {
+        
+    }
 }
 
-let boromirz = {
-    speak: talk,
-    sound: 'One does not simply walk into mordor!'
-}
-
-boromirz.speak()
+var userOne = new User('rye@ninjas.com', 'rye')
+var userTwo = new User ('yoshi@mariokorp.com', 'yoshi')
