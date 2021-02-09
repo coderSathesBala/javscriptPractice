@@ -1,16 +1,19 @@
-let dog = {
-    sound: 'woof',
-    talk: function() {
-        console.log(this.sound)
-    }
+function talk() {
+    console.log(this.sound)
 }
 
-let talkFunction = dog.talk
-let boundFunction = 
-    talkFunction.bind(dog)
-boundFunction()
+let boromir = {sound: 'one does have apples'}
 
-button.addEventListener(
-    'click', 
-    dog.talk.bind(dog)
-)
+let talkBoundToBoromir = talk.bind(boromir)
+talkBoundToBoromir()
+
+let talkz = function() {
+    console.log(this.sound)
+}
+
+let boromirz = {
+    speak: talk,
+    sound: 'One does not simply walk into mordor!'
+}
+
+boromirz.speak()
