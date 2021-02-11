@@ -1,4 +1,3 @@
- 
 class User {
     constructor(email, name){
         this.email = email;
@@ -33,8 +32,5 @@ var userTwo = new User('yoshi@mariokorp.com', 'Yoshi');
 var admin = new Admin('shaun@ninjas.com', 'Shaun');
 
 var users = [userOne, userTwo, admin];
-
-// admin.deleteUser(userTwo);
-userTwo.deleteUser(userOne); // won't work
 
 console.log(users);
